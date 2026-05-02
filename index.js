@@ -26,17 +26,16 @@ app.use('/api/fichas', rutasFichas);
 app.use('/api/pagos', rutasPagos);
 // AGREGA ESTA LÍNEA:
 app.use('/api/blog', rutasBlog);
-// Ruta raíz
-// ... (tus rutas anteriores)
+// ... (tus importaciones de rutas arriba)
 
-// Ruta raíz que ya te funciona
+// Ruta de prueba para saber si el servidor está vivo
 app.get('/', (req, res) => {
     res.send('Backend de Stars Kids operativo al 100% 🚀');
 });
 
-// CAMBIA EL ENCENDIDO POR ESTO:
-const PORT = process.env.PORT || 3000;
+// Configuración del puerto para Render
+const PORT = process.env.PORT || 10000;
 
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Servidor andando en puerto ${PORT}`);
+    console.log(`🚀 Servidor andando en puerto ${PORT}`);
 });
