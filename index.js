@@ -27,18 +27,16 @@ app.use('/api/pagos', rutasPagos);
 // AGREGA ESTA LÍNEA:
 app.use('/api/blog', rutasBlog);
 // Ruta raíz
+// ... (tus rutas anteriores)
+
+// Ruta raíz que ya te funciona
 app.get('/', (req, res) => {
     res.send('Backend de Stars Kids operativo al 100% 🚀');
 });
 
-// --- ENCENDER EL MOTOR ---
-// Línea 34: Busca la variable de Render primero
-const PORT = process.env.PORT || 10000; 
-// Línea 36: Agrega '0.0.0.0' para que sea visible en internet
+// CAMBIA EL ENCENDIDO POR ESTO:
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Servidor andando en puerto ${PORT}`);
-});
-// Línea 36: Agrega '0.0.0.0' para que sea visible en internet
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Servidor andando en puerto ${PORT}`);
+    console.log(`Servidor andando en puerto ${PORT}`);
 });

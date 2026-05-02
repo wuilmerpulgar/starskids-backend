@@ -1,9 +1,10 @@
 const { Pool } = require('pg');
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, 
+  // Usa la variable que configuramos en el panel de Render
+  connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false 
+    rejectUnauthorized: false // Esto es lo que permite que Neon acepte la conexión
   }
 });
 
