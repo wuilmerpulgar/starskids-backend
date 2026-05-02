@@ -32,7 +32,13 @@ app.get('/', (req, res) => {
 });
 
 // --- ENCENDER EL MOTOR ---
-const PORT = 10000;
-app.listen(PORT, () => {
-    console.log(`🚀 Servidor andando en http://localhost:${PORT}`);
+// Línea 34: Busca la variable de Render primero
+const PORT = process.env.PORT || 10000; 
+// Línea 36: Agrega '0.0.0.0' para que sea visible en internet
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Servidor andando en puerto ${PORT}`);
+});
+// Línea 36: Agrega '0.0.0.0' para que sea visible en internet
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Servidor andando en puerto ${PORT}`);
 });
