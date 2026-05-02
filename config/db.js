@@ -1,12 +1,11 @@
 const { Pool } = require('pg');
 
-// Aquí configuro la conexión con mi base de datos de PostgreSQL
+// Usamos la DATABASE_URL de Render, y si no existe (local), usamos tus datos viejos
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'stars_kids_db',
-  password: 'Wuilp15.', 
-  port: 5432,
+  connectionString: process.env.starskids-backend.onrender.com,
+  ssl: {
+    rejectUnauthorized: false // Requerido por Neon para conexiones seguras
+  }
 });
 
-module.exports = pool; 
+module.exports = pool;

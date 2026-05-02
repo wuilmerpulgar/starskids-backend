@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 // --- ENCENDER EL MOTOR ---
-const PORT = 3000;
+const PORT = 10000;
 app.listen(PORT, () => {
     console.log(`🚀 Servidor andando en http://localhost:${PORT}`);
 });
